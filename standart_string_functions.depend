@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1630237710 source:/home/shob/Dev/ILAB 2020-2021/standart_string_functions/string-utils.cpp
+	"string-utils.h"
+
+1630237704 /home/shob/Dev/ILAB 2020-2021/standart_string_functions/string-utils.h
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	<math.h>
+
+1630233845 source:/home/shob/Dev/ILAB 2020-2021/standart_string_functions/main.cpp
+	"string-utils.h"
+
