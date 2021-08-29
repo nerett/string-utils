@@ -111,7 +111,71 @@ static int plain_copy( char* destptr, char* srcptr, int startfrom, int endwhen )
 
 char* string_utils_fgets( char* input_string, int num, FILE* filestream )
 {
+    assert( input_string != NULL );
+    assert( filestream != NULL );
+    assert( std::isfinite( num ) );
 
+
+    int i = 0;
+    for( i; i < num; i++ )
+    {
+        input_string[i] = getc( filestream );
+    }
+    input_string[i+1] = '\0';
+
+    return input_string;
+}
+
+
+
+int string_utils_puts( char* input_string )
+{
+    assert( input_string != NULL );
+
+
+    for( int i = 0; i < string_utils_strlen( input_string ); i++ )
+    {
+        printf( "%c", input_string[i] );
+    }
+
+    printf( "\n" );
+    return 0;
+}
+
+
+
+char* string_utils_strdup( char* input_string )
+{
+    assert( input_string != NULL );
+
+
+    char* newstring = ( char* ) calloc( 50, sizeof( char ) );
+
+    plain_copy( newstring, input_string, 0, string_utils_strlen( input_string ) );
+
+    assert( newstring != NULL );
+    return newstring;
+}
+
+
+
+int string_utils_getline( char* output_string, int string_size, char symbol )
+{
+    assert( output_string != NULL );
+    assert( std::isfinite( string_size ) );
+    assert( std::isfinite( symbol ) );
+
+
+    char input = '0';
+    int i = 0;
+
+    while( input != symbol )
+    {
+        input = getchar();
+        output_string[i] = input;
+        i++;
+    }
+    return 1;
 }
 
 
